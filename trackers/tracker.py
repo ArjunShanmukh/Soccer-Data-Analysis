@@ -141,24 +141,6 @@ class Tracker:
 
         return frame
 
-    def draw_triangle(self, frame, bbox, color):
-        # Skip drawing if bbox contains NaN or is the default [0, 0, 0, 0]
-        if any(np.isnan(coord) for coord in bbox) or bbox == [0, 0, 0, 0]:
-            return frame
-
-        y = int(bbox[1])
-        x, _ = get_center_of_bbox(bbox)
-
-        triangle_points = np.array([
-            [x, y],
-            [x-10, y-20],
-            [x+10, y-20],
-        ])
-        cv2.drawContours(frame, [triangle_points], 0, color, cv2.FILLED)
-        cv2.drawContours(frame, [triangle_points], 0, (0, 0, 0), 2)
-
-        return frame
-
     def draw_annotations(self, video_frames, tracks, # team_ball_control
                           ):
         output_video_frames = []
@@ -186,3 +168,4 @@ class Tracker:
 
 
         return output_video_frames
+
