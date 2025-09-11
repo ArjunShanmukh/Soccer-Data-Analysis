@@ -79,6 +79,8 @@ The system assumes a broadcast-style camera angle similar to the one used in tra
 
 Example Output
 
+<img width="1916" height="923" alt="image" src="https://github.com/user-attachments/assets/733eb171-48cc-4af7-a5f7-9763be922927" />
+
 The output video includes:
 
 Player and referee detection with team-based coloring
