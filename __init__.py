@@ -1,2 +1,1 @@
-from .player_ball_assigner import PlayerBallAssigner
-
+from .heatmap_generator import HeatmapGenerator
