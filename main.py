@@ -75,8 +75,31 @@ def main():
     ## Draw speed and distance
     speed_and_distance_estimator.draw_speed_and_distance(output_video_frames,tracks)
 
+      # Heatmap generator
+    heatmap_generator = HeatmapGenerator(view_transformer, grid_size=(340, 200))
+    heatmap_generator.accumulate_from_tracks(tracks)  # builds accumulator
+    output_video_frames = heatmap_generator.draw_heatmap(output_video_frames, alpha=0.5)
+
+    # Build full-frame heatmap
+    h_frame, w_frame = output_video_frames[0].shape[:2]
+    heatmap_bgr, _ = heatmap_generator.build_heatmap_image(apply_cmap=True)
+
+    # Resize heatmap to full frame
+    full_frame_heatmap = cv2.resize(heatmap_bgr, (w_frame, h_frame), interpolation=cv2.INTER_LINEAR)
+
+    # Blend onto a black frame (optional: full alpha 1.0 if you want pure heatmap)
+    full_frame_heatmap = cv2.addWeighted(np.zeros_like(full_frame_heatmap, dtype=np.uint8), 0, full_frame_heatmap, 1.0,
+                                         0)
+
+    # Append 2-3 seconds of heatmap frames (assuming 30 FPS, 3 seconds → 90 frames)
+    fps = 30
+    for _ in range(fps * 3):
+        output_video_frames.append(full_frame_heatmap)
+
+
     # save video
     save_video(output_video_frames, '../output_videos/output_video.avi')
 
 if __name__ == '__main__':
+
     main()
