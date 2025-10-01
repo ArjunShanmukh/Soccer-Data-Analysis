@@ -79,7 +79,7 @@ The system assumes a broadcast-style camera angle similar to the one used in tra
 
 Example Output
 
-<img width="1916" height="923" alt="image" src="https://github.com/user-attachments/assets/733eb171-48cc-4af7-a5f7-9763be922927" />
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/2da05cfd-e10c-4984-9ba1-8a35e7a6078d" />
 
 The output video includes:
 
@@ -91,8 +91,10 @@ Camera movement overlay
 
 Player speed and distance metrics
 
+A generated heatmap
+
 Acknowledgment:
 
-I independently designed and implemented this soccer analysis system, including player tracking, camera movement estimation, and calculation of speed and distance metrics. The project was inspired by tutorials from Quick Programming, SuperSimpleDev, Programming with Mosh, and Code in a Jiffy, which helped me understand foundational concepts in programming and computer vision. While I consulted these tutorials for guidance, I adapted and extended the methods to work on my own video clips, apply clustering for team identification, and create a unique implementation tailored to soccer footage. I am grateful to these creators for providing resources that enabled me to build this project from scratch.
+I independently designed and implemented this soccer analysis system, including player tracking, camera movement estimation, and calculation of speed and distance metrics. The project was inspired by tutorials from Quick Programming, SuperSimpleDev, Programming with Mosh, and Code in a Jiffy, which helped me understand foundational concepts in programming and computer vision. While I consulted these tutorials for guidance, I adapted and extended the methods to work on my own video clips, add a heatmap generator, and create a unique implementation tailored to soccer footage. I am grateful to these creators for providing resources that enabled me to build this project from scratch.
 
 
