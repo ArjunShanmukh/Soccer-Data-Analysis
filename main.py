@@ -7,6 +7,7 @@ import numpy as np
 from camera_movement_estimator import CameraMovementEstimator
 from view_transformer import ViewTransformer
 from speed_and_distance_estimator import SpeedAndDistanceEstimator
+from heatmap_generator import HeatmapGenerator
 def main():
     # Read Video
     video_frames = read_video('C:/Users/sarat/PycharmProjects/PythonProject/football analysis/football_analytics_project.avi')
@@ -103,3 +104,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
